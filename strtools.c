@@ -1,13 +1,11 @@
 #include "main.h"
-
 /**
-  * _strcmp - compares two strings
-  * @s1: string 1
-  * @s2: string 2
-  *
-  * Return: 0 on success, -1 0n fail
-  */
-
+ * _strcmp - compares two strings
+ * @s1: string 1
+ * @s2: string 2
+ *
+ * Return: 0 on success, -1 on fail
+ */
 int _strcmp(char *s1, char *s2)
 {
 	while (*s1 || *s2)
@@ -23,8 +21,6 @@ int _strcmp(char *s1, char *s2)
 	return (0);
 }
 
-
-
 /**
  * _strncmp - function to compare strings
  * @s1: first string to compare
@@ -32,7 +28,6 @@ int _strcmp(char *s1, char *s2)
  * @len: length of string to compare
  * Return: 0 for success
  */
-
 
 int _strncmp(char *s1, char *s2, int len)
 {
@@ -48,8 +43,6 @@ int _strncmp(char *s1, char *s2, int len)
 	}
 	return (0);
 }
-
-
 /**
  * _strcat - concatenates two strings
  * @dest: the destination string
@@ -114,7 +107,7 @@ char *_strdup(char *str)
 
 int numcount(char *line)
 {
-	int numtokens = 0, i, check = 1;
+	int num_tokens = 0, i, check = 1;
 
 	for (i = 0; line[i]; i++)
 	{
@@ -128,7 +121,6 @@ int numcount(char *line)
 	}
 	return (num_tokens);
 }
-
 
 
 
