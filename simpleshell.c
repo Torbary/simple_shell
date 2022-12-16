@@ -14,29 +14,27 @@ int main(int argc, char *argv[])
 	char *line = NULL;
 	int i, num_tokens = 0, cmdcount = 1, shell_interaction;
 
-	signal(SIGINT, SIG_IGN); /*check shell interactivity*/
+	signal(SIGINT, SIG_IGN); /* Check interactivity */
 	shell_interaction = isatty(STDIN_FILENO);
-	if (shell_interaction == 0 && argc == 1) /* if non-interactive*/
+	if (shell_interaction == 0 && argc == 1) /* if non-interactive */
 	{
-		while (getline(&line, &bufsize, stdin) > 0) /* grabs input*/
+		while (getline(&line, &bufsize, stdin) > 0) /* grabs input */
 		{
-			num_tokens = numcount(line); /*count of no of tokens*/
+			num_tokens = numcount(line); /* counts the # of tokens */
 			parse(line, num_tokens, argv, cmdcount);
 			line = NULL;
-			/* sends line and numtoken to parser*/
+			/* sends line and numtoken to parser */
 		}
 		free(line);
 		return (0);
 	}
-}
-
-while (shell_interaction) /*if interactive*/
-{
-	/*shell prompt*/
-	write (1, "#cisfun$ ", 10);
-	num_tokens = 0; /*reset token count to 0*/
-	i = getline(&line, &bufsize, stdin);/* grabs input*/
-	if (i < 0)
+	while (shell_interaction)/* if interactive */
+	{
+		/* Shell prompt */
+		write(1, "#cisfun$ ", 10);
+		num_tokens = 0; /* resets token count to 0 */
+		i = getline(&line, &bufsize, stdin); /* grabs input */
+		if (i < 0)
 		{
 			free(line);
 			write(1, "\n", 1);
