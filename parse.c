@@ -67,5 +67,7 @@ void myfree(char *line, char **ar, char *newline, char **array)
 	if (line != NULL)
 		free(line);
 	if (array != NULL)
+	{
 		free(array);
+	}
 }
