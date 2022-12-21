@@ -77,6 +77,7 @@ int searchpath(char *p, char **tokens)
 	while (p != NULL && reached != 1)
 	{
 		DIR *dr = opendir(p); /* opens current directory pointer */
+
 		if (dr == NULL)
 		{
 			/* not found */
