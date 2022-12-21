@@ -34,7 +34,7 @@ typedef struct fmt
 	int (*type)();
 } fmt;
 
-/* FUNCTIONS */
+/* helper functions */
 
 void _puts(char *str);
 
@@ -44,25 +44,23 @@ char *_strcat(char *dest, char *src);
 
 int _strcmp(char *s1, char *s2);
 
+int _strncmp(char *s1, char *s2, int len);
+
+int _putchar(char c);
+
+int _printf(const char *format, ...);
+
+/*Neccessary Functions*/
+
 int parse(char *line, int num_tokens, char *argv[], int failcount);
 
 int exe(char *line, char **ar, char *nln, char **arry, char **argv, int flcnt);
 
 void myfree(char *line, char **ar, char *newline, char **array);
 
-int _strncmp(char *s1, char *s2, int len);
-
 int checkbltin(char *line, char **ar, char *newline, char **array);
 
 int numcount(char *line);
-
-int searchpath(char *p, char **tokens);
-
-int findonpath(char **tokens);
-
-void executepath(char *p, char **tokens);
-
-int _printf(const char *format, ...);
 
 int chkfmt(va_list *args, const char *format, int i);
 
@@ -74,8 +72,14 @@ int prdgt(va_list *args);
 
 void getdigits(int n);
 
-int _putchar(char c);
-
 void changedir(char **ar);
+
+/*PATH manipulation Functions*/
+
+int searchpath(char *p, char **tokens);
+
+int findonpath(char **tokens);
+
+void executepath(char *p, char **tokens);
 
 #endif /* MAIN_H*/
