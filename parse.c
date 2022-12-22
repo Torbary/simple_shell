@@ -57,6 +57,7 @@ void myfree(char *line, char **ar, char *newline, char **array)
 	{
 		for (i = 0; ar[i] != NULL; free(ar[i++]))
 			;
+		free(ar);
 	}
 	if (newline != NULL)
 		free(newline);
@@ -64,6 +65,8 @@ void myfree(char *line, char **ar, char *newline, char **array)
 		free(line);
 	if (array != NULL)
 	{
+		for (i = 0; array[i] != NULL; free(array[i]), i++)
+			;
 		free(array);
 	}
 }
