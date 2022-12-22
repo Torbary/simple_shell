@@ -55,12 +55,8 @@ void myfree(char *line, char **ar, char *newline, char **array)
 
 	if (ar != NULL)
 	{
-		while (ar[i] != NULL)
-		{
-			free(ar[i]);
-			i++;
-		}
-		free(ar);
+		for (i = 0; ar[i] != NULL; free(ar[i++]))
+			;
 	}
 	if (newline != NULL)
 		free(newline);
