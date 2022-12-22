@@ -45,3 +45,26 @@ int _putchar(char c)
 {
 	return (write(2, &c, 1));
 }
+
+/**
+ * numcount - function to count number of tokens that will be created
+ * @line: input to check number of tokens to make out of
+ * Return: number of tokens to make
+ */
+
+int numcount(char *line)
+{
+	int num_tokens = 0, i, check = 1;
+
+	for (i = 0; line[i]; i++)
+	{
+		if (line[i] == ' ' || line[i] == 10 || line[i] == '\t')
+			check = 1;
+		else if (check == 1)
+		{
+			check = 0;
+			++num_tokens;
+		}
+	}
+	return (num_tokens);
+}

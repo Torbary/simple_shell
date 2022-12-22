@@ -1,4 +1,31 @@
 #include "main.h"
+
+/**
+ * _strcpy - copies str from src to dest
+ * @src: source string
+ * @dest: destination string
+ * Return: pointer to destination string
+ */
+char *_strcpy(char *dest, char *src)
+{
+	int i;
+	int len = 0;
+
+	if (dest == NULL)
+		return (NULL);
+	else if (src == NULL)
+		return (dest);
+
+	for (len = 0; *(src + len) != 0; len++)
+		;
+
+	for (i = 0; i <= len; i++)
+	{
+		*(dest + i) = *(src + i);
+	}
+	return (dest);
+}
+
 /**
  * _strcmp - compares two strings
  * @s1: string 1
@@ -98,42 +125,3 @@ char *_strdup(char *str)
 	ar[i] = '\0';
 	return (ar);
 }
-
-/**
- * numcount - function to count number of tokens that will be created
- * @line: input to check number of tokens to make out of
- * Return: number of tokens to make
- */
-
-int numcount(char *line)
-{
-	int num_tokens = 0, i, check = 1;
-
-	for (i = 0; line[i]; i++)
-	{
-		if (line[i] == ' ' || line[i] == 10 || line[i] == '\t')
-			check = 1;
-		else if (check == 1)
-		{
-			check = 0;
-			++num_tokens;
-		}
-	}
-	return (num_tokens);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

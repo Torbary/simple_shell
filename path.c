@@ -1,27 +1,5 @@
 #include "main.h"
-/**
- * _strcpy - copies str from src to dest
- * @src: source string
- * @dest: destination string
- * Return: pointer to destination string
- */
-char *_strcpy(char *dest, char *src)
-{
-	int i;
-	int len = 0;
 
-	if (dest == NULL || src == NULL)
-		return (NULL);
-
-	for (len = 0; *(src + len) != 0; len++)
-		;
-
-	for (i = 0; i <= len; i++)
-	{
-		*(dest + i) = *(src + i);
-	}
-	return (dest);
-}
 /**
  * executepath - function to access PATH
  * @p: directory in PATH to access

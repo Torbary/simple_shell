@@ -46,6 +46,8 @@ int _strcmp(char *s1, char *s2);
 
 int _strncmp(char *s1, char *s2, int len);
 
+char *_strcpy(char *src, char *dst);
+
 int _putchar(char c);
 
 int _printf(const char *format, ...);
